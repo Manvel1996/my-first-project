@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+  button{
+    width: 150px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+  }
+
+.navDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .search{
+    width: 200px;
+    margin: 0 auto;
+    margin-block: 20px;
+  }
+  button{
+    margin: 0 auto;
+    background-color: #0d0ae3;
+    color: white;
+    cursor: pointer;
+  }
+  img{
+    width: 150px;
+    height: 130px;
+  }
+}
+.poisk{
+  margin: 20px auto;
+}
+.mainDiv{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.sortDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  background-color: #00e1ff;
+  // height: 250px;
+  p{
+    color: rgb(250, 11, 11);
+  }
+}
+section{
+  display: flex;
+  color: grey;
+  cursor: pointer;
+  :hover{
+    color: yellow;
+  }
+}
+.rated{
+  color: yellow;
+}
+
+.empty{
+  width: 200px;
+  height: 250px;
+  color: grey;
+  cursor: pointer;
+}
+.cardFull{
+  width: 200px;
+  height: 250px;
+  cursor: pointer;
+  color: yellow;
+}
+.infoDivKorzina{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  background-color: antiquewhite;
+  margin-bottom: 200px;
+  .buyKorzinaButton{
+    margin-top: 15px;
+}
+}
