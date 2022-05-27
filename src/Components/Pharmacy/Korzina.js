@@ -35,6 +35,7 @@ export default function Korzina({colorum,infoCart,setCard}) {
       localStorage.setItem("pharmAllList",JSON.stringify(listPharm))
       setCard({type:"buy"})
       console.log(listPharm)
+      localStorage.removeItem("key")
     }
   }
 

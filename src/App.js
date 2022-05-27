@@ -16,10 +16,10 @@ function App() {
       <div className="linkDiv">
       {logined?<Link to='/tel-book'>Tel book</Link>:null}
       {logined?<Link to='/pharm' >Pharmacy</Link>:null}
-      <Link to='/' onClick={()=>{setLogined(false); localStorage.removeItem("login")} }>Logaout</Link>
+      <Link to='/my-first-project' onClick={()=>{setLogined(false); localStorage.removeItem("login")} }>Logaout</Link>
       </div>
       <Routes>
-        <Route path="/" element={<Admin setLogined={setLogined}/>} /><Route/>
+        <Route path="/my-first-project" element={<Admin setLogined={setLogined}/>} />
         <Route path="/tel-book" element={<Main />} />
         <Route path="/pharm" element={<Fetch />}/>
         <Route path="*" element={<Error />}/>
