@@ -38,13 +38,18 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+@media screen and(max-width: 500px){
+  .mainDiv{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .sortDiv{
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 1px solid black;
   background-color: #00e1ff;
-  // height: 250px;
   p{
     color: rgb(250, 11, 11);
   }

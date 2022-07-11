@@ -9,8 +9,8 @@ export default function Registration({setRegistr}) {
         if(Array.from(new FormData(e.target))[1][1] === Array.from(new FormData(e.target))[2][1]){
             setRegistr(true)
             localStorage.setItem("registr",JSON.stringify(Array.from(new FormData(e.target))))
-        }else alert("Please repeat same password")
-    }else alert("login and password longer than 4 letters")
+        }else alert(localStorage.getItem("language") == "en"? "Please repeat same password":"Խնդրում եմ կրկնեք նույն գաղտնաբառը")
+    }else alert(localStorage.getItem("language") == "en"? "login and password longer than 4 letters":"Մուտքանունը և գաղտնաբառը պետք է պարունակեն ամենաքիչը 4 նշան")
   }
 
 
@@ -18,12 +18,12 @@ export default function Registration({setRegistr}) {
       
     <div className='formRegistr'>
         <form action='#' onSubmit={reg}>
-            <input type='text' placeholder='Login' name = 'login'/>
-            <input type='password' placeholder='Password' name='password'/>
-            <input type='password' placeholder='Repeat Password' name='password'/>
-            <input type='submit' value='Registr' className='submitInput'/>
+            <input type='text' placeholder={localStorage.getItem("language") == "en"?'Login':"Մուտքանուն"} name = 'login' required/>
+            <input type='password' placeholder={localStorage.getItem("language") == "en"?'Password':"Գաղտնաբառ"} name='password' required/>
+            <input type='password' placeholder={localStorage.getItem("language") == "en"?'Repeat Password':"Կրկնել Գաղտնաբառը"} name='password' required/>
+            <input type='submit' value={localStorage.getItem("language") == "en"?'Sign Up':"Գրանցվել"} className='submitInput'/>
         </form>
-        <button onClick={()=>setRegistr(true)}>Continue</button>
+        <button onClick={()=>setRegistr(true)}>{localStorage.getItem("language") == "en"?'Continue':"Շարունակել"}</button>
     </div>
   )
 }

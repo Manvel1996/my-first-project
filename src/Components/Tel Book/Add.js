@@ -22,11 +22,11 @@ export default function Add({setCreate}) {
   return (
     <>
         <form action="#" onSubmit={newElem} className='createForm'>
-            <input type="text" placeholder='Name' name='name' maxLength='20'/>
-            <input type="text"  placeholder='User Name' name='username' maxLength='20'/>
-            <input type='tel' placeholder='Phone' name='phone' required maxLength='20'/>
-            <input type='email' placeholder='Email' name='email' maxLength='20'/>
-            <input type="submit" value="Add" className='submitInput'/>
+            <input type="text" placeholder={localStorage.getItem("language") == "en"? 'Name':"Անուն"} name='name' maxLength='20'/>
+            <input type="text"  placeholder={localStorage.getItem("language") == "en"? 'User Name':"Ազգանուն"} name='username' maxLength='20'/>
+            <input type='tel' placeholder={localStorage.getItem("language") == "en"? 'Phone':"Հեռախոսահամար"} name='phone' required maxLength='20'/>
+            <input type='email' placeholder={localStorage.getItem("language") == "en"? 'Email':"Էլ. Հասցե"} name='email' maxLength='20'/>
+            <input type="submit" value={localStorage.getItem("language") == "en"? "Add":"Ավելացնել"} className='submitInput'/>
         </form>
     </>
   )

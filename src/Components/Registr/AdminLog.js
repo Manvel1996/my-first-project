@@ -9,18 +9,18 @@ export default function AdminLog({setLogin,setRegistr,setLogined}) {
       setLogin(true)
       setLogined(true)
       localStorage.setItem("login","true")
-    } else  alert("False registr")
+    } else  alert(localStorage.getItem("language") == "en"? "False registr":"Սխալ մուտքանուն կամ գաղտնաբառ")
     
   }
  
   return (
     <div className='formLogin' >
         <form action='#' onSubmit={log}>
-            <input type='text' placeholder='Login' name = 'login'/>
-            <input type='password' placeholder='Password' name='password'/>
-            <input type='submit' value='Login' className='submitInput'/>
+            <input type='text' placeholder={localStorage.getItem("language") == "en"?'Login':"Մուտքանուն"} name = 'login' required/>
+            <input type='password' placeholder={localStorage.getItem("language") == "en"?'Password':"Գաղտնաբառ"} name='password' required/>
+            <input type='submit' value={localStorage.getItem("language") == "en"?'Sign In':"Մուտք Գործել"} className='submitInput' />
         </form>
-        <button onClick={()=>setRegistr(false)}>Registr</button>
+        <button onClick={()=>setRegistr(false)}>{localStorage.getItem("language") == "en"?'Sign Up':"Գրանցվել"}</button>
     </div>
   )
 }

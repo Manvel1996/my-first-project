@@ -34,7 +34,6 @@ export default function Fetch() {
     
   return (
     <div className='navDiv'>
-      {/* <button onClick={()=>{dispatch({type:"login"});localStorage.removeItem("logined") }}>Logaout</button> */}
       <Search searched={card.searched} setCard={setCard} />
       <div className='mainDiv'>
         <PharmMenu setCard={setCard} />

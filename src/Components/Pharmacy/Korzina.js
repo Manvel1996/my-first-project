@@ -53,11 +53,11 @@ export default function Korzina({colorum,infoCart,setCard}) {
             <div key={Math.random()}>
               <h3>{elem.name}</h3> 
               <p>{elem.counter}</p>
-              <p>{elem.price} $</p>
-              <button onClick={()=> remove(elem.name)}>Delete</button>
+              <p>{localStorage.getItem("language") == "en"? `Price ${elem.price} $`:`Գին ${elem.price * 480} Դր`}</p>
+              <button onClick={()=> remove(elem.name)}>{localStorage.getItem("language") == "en"? 'Delete':"Ջնջել"}</button>
             </div>
           )})}
-          <button onClick={()=>buy()} className='buyKorzinaButton'> Buy</button>
+          <button onClick={()=>buy()} className='buyKorzinaButton'>{localStorage.getItem("language") == "en"?"Buy":"Գնել"}</button>
         </div>:null}
     </div>
   )

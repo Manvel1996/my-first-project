@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { states } from './Main'
 
+export default function Edit({index}) {
+    const [change,setChange] = useState(false)
+    const [text,setText] = useContext(states)
 
-export default function Edit({index,text,setText}) {
-    const[change,setChange] = useState(false)
     function editItem(e){
       e.preventDefault()
       const newEdit = Array.from(new FormData(e.target))
@@ -21,14 +23,14 @@ export default function Edit({index,text,setText}) {
     }
   return (
     <>
-        <button onClick={()=>setChange(!change)} className='edit'>Edit</button>
+        <button onClick={()=>setChange(!change)} className='editTelBook'>{localStorage.getItem("language") == "en"? 'Edit':"Փոփոխել"}</button>
         {change?        
         <form action="#"  className='createForm' onSubmit={(e)=>editItem(e)}>
-            <input type="text" placeholder='Name' name='name' maxLength='20' />
-            <input type="text"  placeholder='User Name' name='username' maxLength='20'/>
-            <input type='tel' placeholder='Phone' name='phone' maxLength='20' required/>
-            <input type='email' placeholder='Email' name='email' maxLength='20'/>
-            <input type="submit" value="Change" className='submitInput'/>
+            <input type="text" placeholder={localStorage.getItem("language") == "en"? 'Name':"Անուն"} name='name' maxLength='20' />
+            <input type="text"  placeholder={localStorage.getItem("language") == "en"? 'User Name':"Ազգանուն"} name='username' maxLength='20'/>
+            <input type='tel' placeholder={localStorage.getItem("language") == "en"? 'Phone':"Հեռախոսահամար"} name='phone' maxLength='20' required/>
+            <input type='email' placeholder={localStorage.getItem("language") == "en"? 'Email':"Էլ. Հասցե"} name='email' maxLength='20'/>
+            <input type="submit" value={localStorage.getItem("language") == "en"? "Change":"Փոփոխել"} className='submitInput'/>
         </form>:null}
     </>
   )

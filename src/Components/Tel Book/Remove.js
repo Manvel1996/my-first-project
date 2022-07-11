@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { states } from './Main'
 
-export default function Remove({phone,text,setText}) {
-
+export default function Remove({phone}) {
+  const[text,setText] = useContext(states)
     function deleteItem(){
         let masiv = JSON.parse(localStorage.getItem("userList"))
 
@@ -14,7 +15,7 @@ export default function Remove({phone,text,setText}) {
     }
   return (
     <>
-        <button onClick={deleteItem}>Delete</button>
+        <button onClick={deleteItem} className='removeTelBook'>{localStorage.getItem("language") == "en"? 'Delete':"Ջնջել"}</button>
     </>
   )
 }

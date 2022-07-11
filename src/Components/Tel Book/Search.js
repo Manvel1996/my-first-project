@@ -12,7 +12,7 @@ export function Search() {
     }  
   return (
     <>
-      <input type='search' placeholder='search name' onChange={search}/>
+      <input type='search' placeholder={localStorage.getItem("language") == "en"? 'Search Name':"Փնտրել Անուն"} onChange={search}/>
       <div className='poisk'><div>{poisk.name}</div><div>{poisk.username}</div><div>{poisk.phone}</div><div>{poisk.email}</div></div>
     </>
   )
